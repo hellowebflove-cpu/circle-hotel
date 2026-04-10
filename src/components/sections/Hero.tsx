@@ -53,7 +53,7 @@ export default function Hero() {
 
           <a
             href="/invest"
-            className="mt-6 inline-flex items-center justify-center rounded-[50px] bg-[#AF5235] px-14 py-4 text-lg font-semibold tracking-[0.48px] text-white transition-colors duration-200 hover:bg-[#9A4730] md:text-2xl"
+            className="mt-6 inline-flex items-center justify-center rounded-[50px] bg-[#AF5235] px-9 py-2.5 text-sm font-semibold tracking-[0.48px] text-white transition-colors duration-200 hover:bg-[#9A4730] md:text-base"
           >
             Інвестувати
           </a>
