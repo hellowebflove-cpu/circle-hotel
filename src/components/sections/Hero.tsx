@@ -27,13 +27,18 @@ export default function Hero() {
             готелю у Києві
           </h1>
 
-          <p className="mt-6 max-w-[600px] text-base font-normal leading-[1.4] tracking-[0.48px] text-white/80 sm:text-lg md:text-xl">
-            Купи номер та здай нам в оренду
-          </p>
-
-          <p className="mt-4 rounded-[50px] border border-white/25 px-6 py-2.5 text-sm font-semibold tracking-[0.48px] text-white/90 md:text-base">
-            Гарантований прибуток до 10.5%
-          </p>
+          <div className="mt-8 w-[280px] rounded-2xl bg-black/35 px-6 py-5 backdrop-blur-md ring-1 ring-white/10 sm:w-[320px]">
+            <p className="text-center text-sm font-normal leading-[1.3] tracking-[0.3px] text-white sm:text-base">
+              Купи номер та здай нам в оренду
+            </p>
+            <div className="mx-auto mt-3 h-px w-10 bg-white/25" />
+            <p className="mt-2 text-center font-serif italic text-[#C45A3A] text-[56px] leading-[1] sm:text-[64px]">
+              10.5%
+            </p>
+            <p className="mt-2 text-center text-[11px] font-semibold uppercase tracking-[2px] text-white/55">
+              Гарантований прибуток
+            </p>
+          </div>
 
           <a
             href="/invest"
