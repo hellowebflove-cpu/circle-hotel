@@ -1,12 +1,28 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+
+type AmbianceSlide = {
+  category: "lobby" | "bedroom" | "bath" | "kitchen";
+  name: string;
+  alt: string;
+};
+
+const ambianceSlides: AmbianceSlide[] = [
+  { category: "lobby", name: "lobby-1", alt: "Лобі Circle Hotel" },
+  { category: "lobby", name: "lobby-3", alt: "Лобі Circle Hotel" },
+  { category: "bedroom", name: "bedroom-1", alt: "Спальня апартаменту" },
+  { category: "bedroom", name: "bedroom-2", alt: "Спальня апартаменту" },
+  { category: "bath", name: "bath-1", alt: "Ванна кімната" },
+  { category: "bath", name: "bath-2", alt: "Ванна кімната" },
+  { category: "kitchen", name: "kitchen-1", alt: "Кухня апартаменту" },
+  { category: "kitchen", name: "kitchen-2", alt: "Кухня апартаменту" },
+];
 
 const apartments = [
   {
@@ -20,10 +36,6 @@ const apartments = [
     income10y: "51 975",
     priceIn10y: "90 383",
     totalProfit: "142 358",
-    images: [
-      "/images/units/solo-18-interior.webp",
-      "/images/units/solo-18.webp",
-    ],
     description: "Компактний номер для одного — ідеальна інвестиція з низьким порогом входу",
   },
   {
@@ -37,10 +49,6 @@ const apartments = [
     income10y: "73 124",
     priceIn10y: "113 352",
     totalProfit: "186 476",
-    images: [
-      "/images/units/sidebyside-25-interior.webp",
-      "/images/units/sidebyside-25.webp",
-    ],
     description: "Простір для двох з окремими зонами — оптимальний баланс ціни та дохідності",
   },
   {
@@ -54,10 +62,6 @@ const apartments = [
     income10y: "101 759",
     priceIn10y: "145 337",
     totalProfit: "247 096",
-    images: [
-      "/images/units/studio-35-interior.webp",
-      "/images/units/studio-35.webp",
-    ],
     description: "Повноцінна студія з кухнею — найпопулярніший формат серед гостей",
   },
   {
@@ -71,10 +75,6 @@ const apartments = [
     income10y: "166 856",
     priceIn10y: "223 481",
     totalProfit: "390 337",
-    images: [
-      "/images/units/extravagant-58-interior.webp",
-      "/images/units/extravagant-58.webp",
-    ],
     description: "Преміальний апартамент з максимальною дохідністю та простором",
   },
 ];
@@ -123,17 +123,20 @@ export default function Investment() {
               pagination={{ clickable: true }}
               className="h-full w-full investment-swiper"
             >
-              {apt.images.map((img, i) => (
-                <SwiperSlide key={i}>
-                  <div className="relative h-full w-full">
-                    <Image
-                      src={img}
-                      alt={`${apt.name} — фото ${i + 1}`}
-                      fill
-                      className="object-cover"
-                      sizes="(max-width: 1024px) 100vw, 50vw"
+              {ambianceSlides.map((slide) => (
+                <SwiperSlide key={slide.name}>
+                  <picture className="block h-full w-full">
+                    <source
+                      media="(min-width: 768px)"
+                      srcSet={`/images/ambiance/desktop/${slide.category}/${slide.name}.webp`}
                     />
-                  </div>
+                    <img
+                      src={`/images/ambiance/mobile/${slide.category}/${slide.name}.webp`}
+                      alt={slide.alt}
+                      loading="lazy"
+                      className="h-full w-full object-cover"
+                    />
+                  </picture>
                 </SwiperSlide>
               ))}
             </Swiper>
