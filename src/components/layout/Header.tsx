@@ -66,14 +66,12 @@ export default function Header() {
     >
       <Link href="/">
         <Image
-          src="/images/circle-logo-white.svg"
+          src={isDark ? "/images/circle-logo.svg" : "/images/circle-logo-white.svg"}
           alt="Circle"
           width={153}
           height={45}
           style={{ width: "auto" }}
-          className={`h-6 md:h-[30px] transition-[filter] duration-300 ${
-            isDark ? "brightness-0" : ""
-          }`}
+          className="h-6 md:h-[30px]"
           priority
         />
       </Link>
