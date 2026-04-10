@@ -143,15 +143,15 @@ export default function Investment() {
           <div className="flex flex-col justify-between">
             {/* Top: name + description */}
             <div>
-              <div className="flex items-start justify-between gap-4">
-                <h3 className="font-sans text-[32px] font-normal leading-[1.2] tracking-[0.48px] md:text-[40px]">
+              <div className="flex flex-wrap items-baseline gap-x-5 gap-y-2">
+                <h3 className="font-sans text-[32px] font-normal leading-[1.1] tracking-[0.48px] md:text-[40px]">
                   {apt.name}
                 </h3>
-                <span className="mt-1 shrink-0 rounded-[50px] border border-black/20 px-4 py-1.5 text-sm tracking-[0.48px] text-black/70">
+                <span className="font-serif italic text-[26px] leading-[1] text-[#AF5235] md:text-[32px]">
                   {apt.area}
                 </span>
               </div>
-              <p className="mt-3 max-w-[440px] text-base leading-[1.5] tracking-[0.48px] text-black/60">
+              <p className="mt-4 max-w-[440px] text-base leading-[1.5] tracking-[0.48px] text-black/60">
                 {apt.description}
               </p>
             </div>
