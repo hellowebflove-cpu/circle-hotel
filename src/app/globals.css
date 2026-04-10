@@ -64,34 +64,46 @@ body {
 /* Swiper overrides — Circle style */
 .investment-swiper .swiper-button-prev,
 .investment-swiper .swiper-button-next {
-  width: 36px;
-  height: 36px;
-  margin-top: -18px;
+  width: 26px;
+  height: 26px;
+  margin-top: -13px;
   border-radius: 9999px;
-  background: rgba(255, 255, 255, 0.9);
-  color: #1a1a1a;
-  backdrop-filter: blur(8px);
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.12);
+  background: #000;
+  color: #fff;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.25);
   transition: background 200ms ease, transform 200ms ease;
 }
 
 .investment-swiper .swiper-button-prev {
-  left: 14px;
+  left: 12px;
 }
 .investment-swiper .swiper-button-next {
-  right: 14px;
+  right: 12px;
 }
 
 .investment-swiper .swiper-button-prev:hover,
 .investment-swiper .swiper-button-next:hover {
-  background: #ffffff;
-  transform: scale(1.06);
+  background: #1a1a1a;
+  transform: scale(1.08);
 }
 
 .investment-swiper .swiper-button-prev::after,
 .investment-swiper .swiper-button-next::after {
-  font-size: 12px;
-  font-weight: 700;
+  content: "";
+  width: 5px;
+  height: 5px;
+  border-right: 1.5px solid #fff;
+  border-bottom: 1.5px solid #fff;
+}
+
+.investment-swiper .swiper-button-prev::after {
+  transform: rotate(135deg);
+  margin-left: 2px;
+}
+
+.investment-swiper .swiper-button-next::after {
+  transform: rotate(-45deg);
+  margin-right: 2px;
 }
 
 .investment-swiper .swiper-button-disabled {
