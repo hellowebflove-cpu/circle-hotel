@@ -223,7 +223,7 @@ export default function Investment() {
               href="/invest"
               className="mt-10 inline-flex w-full items-center justify-center rounded-[50px] bg-[#AF5235] px-14 py-4 text-lg font-semibold tracking-[0.48px] text-white transition-colors duration-200 hover:bg-[#9A4730] sm:w-auto sm:self-start md:text-xl"
             >
-              Обрати цей номер
+              Залишити заявку
             </a>
           </div>
         </div>
