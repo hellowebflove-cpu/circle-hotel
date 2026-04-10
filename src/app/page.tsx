@@ -1,6 +1,5 @@
 import Header from "@/components/layout/Header";
 import Hero from "@/components/sections/Hero";
-import Investment from "@/components/sections/Investment";
 import FloatingPhone from "@/components/ui/FloatingPhone";
 
 export default function Home() {
@@ -8,7 +7,6 @@ export default function Home() {
     <>
       <Header />
       <Hero />
-      <Investment />
       <FloatingPhone />
     </>
   );
