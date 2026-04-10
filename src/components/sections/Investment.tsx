@@ -21,7 +21,7 @@ const apartments = [
     priceIn10y: "90 383",
     totalProfit: "142 358",
     images: [
-      "/images/hero-bg.jpg",
+      "/images/units/solo-18.webp",
       "/images/hero-bg.jpg",
     ],
     description: "Компактний номер для одного — ідеальна інвестиція з низьким порогом входу",
@@ -38,7 +38,7 @@ const apartments = [
     priceIn10y: "113 352",
     totalProfit: "186 476",
     images: [
-      "/images/hero-bg.jpg",
+      "/images/units/sidebyside-25.webp",
       "/images/hero-bg.jpg",
     ],
     description: "Простір для двох з окремими зонами — оптимальний баланс ціни та дохідності",
@@ -55,7 +55,7 @@ const apartments = [
     priceIn10y: "145 337",
     totalProfit: "247 096",
     images: [
-      "/images/hero-bg.jpg",
+      "/images/units/studio-35.webp",
       "/images/hero-bg.jpg",
     ],
     description: "Повноцінна студія з кухнею — найпопулярніший формат серед гостей",
@@ -72,7 +72,7 @@ const apartments = [
     priceIn10y: "223 481",
     totalProfit: "390 337",
     images: [
-      "/images/hero-bg.jpg",
+      "/images/units/extravagant-58.webp",
       "/images/hero-bg.jpg",
     ],
     description: "Преміальний апартамент з максимальною дохідністю та простором",
