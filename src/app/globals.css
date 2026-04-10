@@ -1,26 +1,93 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Backgrounds */
+  --color-bg: #FFFFFF;
+  --color-bg-alt: #F6F6F5;
+  --color-sand: #EBD8B0;
+  --color-sand-light: rgba(235, 216, 176, 0.3);
+  --color-cream: #F8F2E4;
+
+  /* Text */
+  --color-text: #000000;
+  --color-text-muted: rgba(0, 0, 0, 0.8);
+
+  /* Accent — Terracotta */
+  --color-accent: #AF5235;
+  --color-accent-hover: #9A4730;
+
+  /* Secondary — Steel Blue */
+  --color-blue: #466D84;
+  --color-blue-muted: rgba(70, 109, 132, 0.66);
+
+  /* Border */
+  --color-border: #DDDDDD;
+
+  /* Radius — binary: 0 or pill */
+  --radius-pill: 50px;
+
+  /* Easing */
+  --ease-default: ease;
+  --duration-fast: 200ms;
+  --duration-base: 300ms;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-background: var(--color-bg);
+  --color-foreground: var(--color-text);
+  --color-accent: var(--color-accent);
+  --color-accent-hover: var(--color-accent-hover);
+  --color-sand: var(--color-sand);
+  --color-cream: var(--color-cream);
+  --color-blue: var(--color-blue);
+  --font-sans: var(--font-sans);
+  --font-serif: var(--font-serif);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), sans-serif;
+  font-size: 16px;
+  color: #000000;
+  background: #FFFFFF;
+  line-height: 1.2;
+  letter-spacing: 0.48px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+:focus-visible {
+  outline: 2px solid #AF5235;
+  outline-offset: 2px;
+  border-radius: inherit;
+}
+
+/* Swiper overrides — Circle style */
+.investment-swiper .swiper-button-prev,
+.investment-swiper .swiper-button-next {
+  width: 44px;
+  height: 44px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  color: white;
+  background: rgba(0, 0, 0, 0.3);
+  transition: background 200ms ease;
+}
+
+.investment-swiper .swiper-button-prev:hover,
+.investment-swiper .swiper-button-next:hover {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.investment-swiper .swiper-button-prev::after,
+.investment-swiper .swiper-button-next::after {
+  font-size: 16px;
+}
+
+.investment-swiper .swiper-pagination-bullet {
+  background: rgba(0, 0, 0, 0.35);
+  opacity: 1;
+}
+
+.investment-swiper .swiper-pagination-bullet-active {
+  background: #AF5235;
 }
