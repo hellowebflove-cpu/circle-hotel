@@ -64,30 +64,55 @@ body {
 /* Swiper overrides — Circle style */
 .investment-swiper .swiper-button-prev,
 .investment-swiper .swiper-button-next {
-  width: 44px;
-  height: 44px;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  border-radius: 50%;
-  color: white;
-  background: rgba(0, 0, 0, 0.3);
-  transition: background 200ms ease;
+  width: 36px;
+  height: 36px;
+  margin-top: -18px;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.9);
+  color: #1a1a1a;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.12);
+  transition: background 200ms ease, transform 200ms ease;
+}
+
+.investment-swiper .swiper-button-prev {
+  left: 14px;
+}
+.investment-swiper .swiper-button-next {
+  right: 14px;
 }
 
 .investment-swiper .swiper-button-prev:hover,
 .investment-swiper .swiper-button-next:hover {
-  background: rgba(0, 0, 0, 0.5);
+  background: #ffffff;
+  transform: scale(1.06);
 }
 
 .investment-swiper .swiper-button-prev::after,
 .investment-swiper .swiper-button-next::after {
-  font-size: 16px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.investment-swiper .swiper-button-disabled {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.investment-swiper .swiper-pagination {
+  bottom: 14px !important;
 }
 
 .investment-swiper .swiper-pagination-bullet {
-  background: rgba(0, 0, 0, 0.35);
+  width: 6px;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.55);
   opacity: 1;
+  transition: width 200ms ease, background 200ms ease;
 }
 
 .investment-swiper .swiper-pagination-bullet-active {
-  background: #AF5235;
+  width: 20px;
+  border-radius: 9999px;
+  background: #ffffff;
 }

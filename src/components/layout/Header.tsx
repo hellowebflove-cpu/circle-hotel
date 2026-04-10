@@ -8,18 +8,37 @@ const HEADER_HEIGHT = 75;
 
 export default function Header() {
   const [isDark, setIsDark] = useState(false);
+  const [hidden, setHidden] = useState(false);
 
   useEffect(() => {
     const sections = document.querySelectorAll<HTMLElement>('[data-theme="light"]');
-    if (sections.length === 0) return;
 
     let raf = 0;
+    let lastY = window.scrollY;
+
     const check = () => {
-      const overlap = Array.from(sections).some((el) => {
-        const r = el.getBoundingClientRect();
-        return r.top < HEADER_HEIGHT && r.bottom > 0;
-      });
-      setIsDark(overlap);
+      const y = window.scrollY;
+      const delta = y - lastY;
+
+      // Theme: any light section under the header strip?
+      if (sections.length > 0) {
+        const overlap = Array.from(sections).some((el) => {
+          const r = el.getBoundingClientRect();
+          return r.top < HEADER_HEIGHT && r.bottom > 0;
+        });
+        setIsDark(overlap);
+      }
+
+      // Auto-hide: hide on scroll down past threshold, show on scroll up
+      if (y < HEADER_HEIGHT) {
+        setHidden(false);
+      } else if (delta > 4) {
+        setHidden(true);
+      } else if (delta < -4) {
+        setHidden(false);
+      }
+
+      lastY = y;
     };
     const onScroll = () => {
       if (raf) return;
@@ -40,7 +59,11 @@ export default function Header() {
   }, []);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 h-[75px] flex items-center justify-between px-6 md:px-10">
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 h-[75px] flex items-center justify-between px-6 md:px-10 transition-transform duration-300 ease-out ${
+        hidden ? "-translate-y-full" : "translate-y-0"
+      }`}
+    >
       <Link href="/">
         <Image
           src="/images/circle-logo-white.svg"
