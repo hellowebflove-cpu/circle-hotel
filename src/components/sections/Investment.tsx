@@ -92,7 +92,7 @@ export default function Investment() {
         </p>
         <h2 className="mt-3 font-sans text-[40px] font-normal leading-[1.05] tracking-[0.48px] sm:text-[56px] md:text-[64px]">
           Скільки я{" "}
-          <span className="font-serif italic">заробю?</span>
+          <span className="font-serif italic">зароблю?</span>
         </h2>
 
         {/* Apartment type tabs */}
