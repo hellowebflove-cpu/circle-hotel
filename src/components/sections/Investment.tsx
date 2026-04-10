@@ -96,12 +96,12 @@ export default function Investment() {
         </h2>
 
         {/* Apartment type tabs */}
-        <div className="mt-10 flex flex-wrap gap-3">
+        <div className="mt-6 flex flex-wrap gap-1.5 md:mt-10 md:gap-3">
           {apartments.map((a, i) => (
             <button
               key={a.id}
               onClick={() => setActive(i)}
-              className={`cursor-pointer rounded-[50px] px-5 py-2.5 text-sm font-semibold tracking-[0.48px] transition-colors duration-200 md:text-base ${
+              className={`cursor-pointer rounded-[50px] px-3 py-1.5 text-xs font-semibold tracking-[0.48px] transition-colors duration-200 md:px-5 md:py-2.5 md:text-base ${
                 active === i
                   ? "bg-black text-white"
                   : "border border-black/20 text-black/70 hover:border-black/50 hover:text-black"
@@ -113,9 +113,9 @@ export default function Investment() {
         </div>
 
         {/* Card content */}
-        <div className="mt-10 grid gap-8 lg:grid-cols-2 lg:gap-12">
+        <div className="mt-6 grid gap-8 md:mt-10 lg:grid-cols-2 lg:gap-12">
           {/* Left — Photo slider */}
-          <div className="relative aspect-[4/3] overflow-hidden rounded-none">
+          <div className="relative aspect-[3/4] overflow-hidden rounded-none lg:aspect-[4/3]">
             <Swiper
               key={apt.id}
               modules={[Navigation, Pagination]}
