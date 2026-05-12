@@ -77,6 +77,16 @@ export default function Header() {
       </Link>
       <div className="flex items-center gap-4 md:gap-6">
         <Link
+          href="/news"
+          className={`hidden text-xs font-semibold tracking-[0.48px] transition-colors duration-300 md:inline ${
+            isDark
+              ? "text-black hover:text-black/70"
+              : "text-white hover:text-white/70"
+          }`}
+        >
+          Новини
+        </Link>
+        <Link
           href="/invest"
           className={`rounded-[50px] px-5 py-2 text-xs font-semibold tracking-[0.48px] transition-colors duration-300 ${
             isDark
