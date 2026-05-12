@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Header from "@/components/layout/Header";
 import Investment from "@/components/sections/Investment";
+import Amenities from "@/components/sections/Amenities";
 import FloatingPhone from "@/components/ui/FloatingPhone";
 
 export const metadata: Metadata = {
@@ -15,6 +16,7 @@ export default function InvestPage() {
       <Header />
       <main>
         <Investment />
+        <Amenities />
       </main>
       <FloatingPhone />
     </>
